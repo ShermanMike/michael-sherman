@@ -1,0 +1,161 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #0078d7;
+    --accent-color: #00b4cf;
+    --background-color: #f5f7fa;
+    --text-color: #333333;
+    --light-gray: #eeeeee;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding: 20px;
+}
+
+/* Header styles */
+body > header {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+#credits {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    margin: 15px 0;
+    font-size: 0.9rem;
+}
+
+#header-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-top: 20px;
+}
+
+/* Main content area */
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* Extension container styles */
+.extension-container {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.extension-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.extension-container header {
+    background-color: var(--secondary-color);
+    padding: 15px 20px;
+    color: white;
+}
+
+.extension-container h2 {
+    font-size: 1.5rem;
+}
+
+.extension-url {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.extension-url:hover {
+    background-color: #0095ab;
+}
+
+.extension-container section {
+    padding: 20px;
+    flex-grow: 1; 
+}
+
+.extension-container p {
+    color: #555;
+    line-height: 1.7;
+}
+
+.extension-container footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: var(--light-gray);
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Style for author, downloads, and stars */
+.extension-container footer span {
+    display: inline-flex;
+    align-items: center;
+}
+
+#E1-author::before,
+#E2-author::before {
+    content: "👤 ";
+    margin-right: 5px;
+}
+
+#E1-downloads::before,
+#E2-downloads::before {
+    content: "⬇️ ";
+    margin-right: 5px;
+}
+
+#E1-stars::before,
+#E2-stars::before {
+    content: "⭐ ";
+    margin-right: 5px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}
